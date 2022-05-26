@@ -1,0 +1,481 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local FluzasFarm = Instance.new("TextLabel")
+local EquipDW = Instance.new("TextButton")
+local AutoFarm = Instance.new("TextButton")
+local HUD = Instance.new("TextButton")
+local Pings = Instance.new("TextButton")
+local AntiAFK = Instance.new("TextButton")
+local LockPlayer = Instance.new("TextButton")
+local CountWeight = Instance.new("TextButton")
+local Admin = Instance.new("TextButton")
+local Rumble = Instance.new("TextButton")
+local DisablePopup = Instance.new("TextButton")
+local Small = Instance.new("TextButton")
+local Loop = Instance.new("TextButton")
+local Camera = Instance.new("TextButton")
+local Inventory = Instance.new("TextButton")
+local ClickEtoopen = Instance.new("TextLabel")
+local ClickXtoclose = Instance.new("TextLabel")
+local DiscordContactFluzas4940 = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+ScrollingFrame.Parent = ScreenGui
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.Position = UDim2.new(0.192612141, 0, 0.127236575, 0)
+ScrollingFrame.Size = UDim2.new(0, 310, 0, 308)
+
+FluzasFarm.Name = "Fluzas Farm"
+FluzasFarm.Parent = ScrollingFrame
+FluzasFarm.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FluzasFarm.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FluzasFarm.Position = UDim2.new(0.022580646, 0, 0, 0)
+FluzasFarm.Size = UDim2.new(0, 296, 0, 50)
+FluzasFarm.Font = Enum.Font.SourceSans
+FluzasFarm.Text = "Fluzas Farm"
+FluzasFarm.TextColor3 = Color3.fromRGB(255, 255, 255)
+FluzasFarm.TextSize = 40.000
+
+EquipDW.Name = "Equip DW"
+EquipDW.Parent = ScrollingFrame
+EquipDW.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+EquipDW.BorderColor3 = Color3.fromRGB(255, 255, 255)
+EquipDW.Position = UDim2.new(0.0419354849, 0, 0.0739265829, 0)
+EquipDW.Size = UDim2.new(0, 129, 0, 50)
+EquipDW.Font = Enum.Font.SourceSans
+EquipDW.Text = "Equip DW"
+EquipDW.TextColor3 = Color3.fromRGB(255, 255, 255)
+EquipDW.TextSize = 30.000
+EquipDW.MouseButton1Down:connect(function()
+	for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+		if v.Name == "Double Weight" then
+			v:Activate()
+			v.Parent = game.Players.LocalPlayer.Character
+		end
+	end
+end)
+
+AutoFarm.Name = "Auto Farm"
+AutoFarm.Parent = ScrollingFrame
+AutoFarm.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AutoFarm.BorderColor3 = Color3.fromRGB(255, 255, 255)
+AutoFarm.Position = UDim2.new(0.512903214, 0, 0.0735586509, 0)
+AutoFarm.Size = UDim2.new(0, 129, 0, 50)
+AutoFarm.Font = Enum.Font.SourceSans
+AutoFarm.Text = "Auto Farm"
+AutoFarm.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoFarm.TextSize = 30.000
+AutoFarm.MouseButton1Down:connect(function()
+	_G.Auto4 = true
+	while _G.Auto4 do
+		wait(0.6)
+		for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v.Name == "Double Weight" then v:Activate() end
+
+
+		end
+	end
+end)
+
+HUD.Name = "HUD"
+HUD.Parent = ScrollingFrame
+HUD.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+HUD.BorderColor3 = Color3.fromRGB(255, 255, 255)
+HUD.Position = UDim2.new(0.0419354811, 0, 0.150234953, 0)
+HUD.Size = UDim2.new(0, 129, 0, 50)
+HUD.Font = Enum.Font.SourceSans
+HUD.Text = "HUD"
+HUD.TextColor3 = Color3.fromRGB(255, 255, 255)
+HUD.TextSize = 30.000
+HUD.MouseButton1Down:connect(function()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.ProteinBuy:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.OpenShop:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.OpenReb:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.ImageLabel:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.OpenPack:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.PopSound:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.BlackMarket:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.LiftRemind:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.MuscleGain:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.RebFrame:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.ShopFrame:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.OpenSkins:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.Bar:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.StrengthHolder.ImageLabel:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.StrengthHolder.TextLabel.TextLabel:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.CashHolder:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.CashButton:Destroy()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.RumbleHolder:Destroy()
+end)
+
+Pings.Name = "Pings"
+Pings.Parent = ScrollingFrame
+Pings.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Pings.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Pings.Position = UDim2.new(0.512903214, 0, 0.149699211, 0)
+Pings.Size = UDim2.new(0, 129, 0, 50)
+Pings.Font = Enum.Font.SourceSans
+Pings.Text = "Pings"
+Pings.TextColor3 = Color3.fromRGB(255, 255, 255)
+Pings.TextSize = 30.000
+Pings.MouseButton1Down:connect(function()
+	local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+	local g = game
+	local w = g.Workspace
+	local l = g.Lighting
+	local t = w.Terrain
+	t.WaterWaveSize = 0
+	t.WaterWaveSpeed = 0
+	t.WaterReflectance = 0
+	t.WaterTransparency = 0
+	l.GlobalShadows = false
+	l.FogEnd = 9e9
+	l.Brightness = 0
+	settings().Rendering.QualityLevel = "Level01"
+	for i,v in pairs(g:GetDescendants()) do
+		if v:IsA("Part") or v:IsA("Union") or v:IsA("MeshPart") then
+			v.Material = "Plastic"
+			v.Reflectance = 0
+		elseif v:IsA("Decal") and decalsyeeted then 
+			v.Transparency = 1
+		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then 
+			v.Lifetime = NumberRange.new(0)
+		end
+	end
+end)
+
+AntiAFK.Name = "Anti AFK"
+AntiAFK.Parent = ScrollingFrame
+AntiAFK.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AntiAFK.BorderColor3 = Color3.fromRGB(255, 255, 255)
+AntiAFK.Position = UDim2.new(0.0419354811, 0, 0.222967356, 0)
+AntiAFK.Size = UDim2.new(0, 129, 0, 50)
+AntiAFK.Font = Enum.Font.SourceSans
+AntiAFK.Text = "Anti AFK"
+AntiAFK.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiAFK.TextSize = 30.000
+AntiAFK.MouseButton1Down:connect(function()
+	wait(0.5)local ba=Instance.new("ScreenGui")
+	local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
+	local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
+	ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
+	ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
+	ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,304,0,52)
+	ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Anti Afk Kick Script"ca.TextColor3=Color3.new(0,1,1)
+	ca.TextSize=22;da.Parent=ca
+	da.BackgroundColor3=Color3.new(0.196078,0.196078,0.196078)da.Position=UDim2.new(0,0,1.0192306,0)
+	da.Size=UDim2.new(0,304,0,107)_b.Parent=da
+	_b.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)_b.Position=UDim2.new(0,0,0.800455689,0)
+	_b.Size=UDim2.new(0,304,0,21)_b.Font=Enum.Font.Arial;_b.Text="Made by XxSwordmaster_2xX"
+	_b.TextColor3=Color3.new(1,1,1)_b.TextSize=20;ab.Parent=da
+	ab.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ab.Position=UDim2.new(0,0,0.158377379,0)
+	ab.Size=UDim2.new(0,304,0,44)ab.Font=Enum.Font.ArialBold;ab.Text="Status: Script Started"
+	ab.TextColor3=Color3.new(1,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
+	game:service'Players'.LocalPlayer.Idled:connect(function()
+		bb:CaptureController()bb:ClickButton2(Vector2.new())
+		ab.Text="You went idle and ROBLOX tried to kick you but we reflected it!"wait(2)ab.Text="Script Re-Enabled"end)
+end)
+
+LockPlayer.Name = "Lock Player"
+LockPlayer.Parent = ScrollingFrame
+LockPlayer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+LockPlayer.BorderColor3 = Color3.fromRGB(255, 255, 255)
+LockPlayer.Position = UDim2.new(0.512903214, 0, 0.222664014, 0)
+LockPlayer.Size = UDim2.new(0, 129, 0, 50)
+LockPlayer.Font = Enum.Font.SourceSans
+LockPlayer.Text = "Lock Player"
+LockPlayer.TextColor3 = Color3.fromRGB(255, 255, 255)
+LockPlayer.TextSize = 28.000
+LockPlayer.MouseButton1Down:connect(function()
+	for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+		if v:IsA('Part') then v.Anchored = true
+		end
+	end
+end)
+
+CountWeight.Name = "Count Weight"
+CountWeight.Parent = ScrollingFrame
+CountWeight.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CountWeight.BorderColor3 = Color3.fromRGB(255, 255, 255)
+CountWeight.Position = UDim2.new(0.0419354811, 0, 0.291252494, 0)
+CountWeight.Size = UDim2.new(0, 129, 0, 50)
+CountWeight.Font = Enum.Font.SourceSans
+CountWeight.Text = "Count Weight"
+CountWeight.TextColor3 = Color3.fromRGB(255, 255, 255)
+CountWeight.TextSize = 20.000
+CountWeight.MouseButton1Down:connect(function()
+	-- Gui to Lua
+	-- Version: 3.2
+
+	-- Instances:
+
+	local ScreenGui = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local UIGradient = Instance.new("UIGradient")
+	local textlabel = Instance.new("TextLabel")
+	local UICorner = Instance.new("UICorner")
+	local UIGradient_2 = Instance.new("UIGradient")
+
+	--Properties:
+
+	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ScreenGui.DisplayOrder = 999999999
+	ScreenGui.ResetOnSpawn = false
+
+	Frame.Parent = ScreenGui
+	Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame.BorderSizePixel = 2
+	Frame.Position = UDim2.new(0.65150404, 0, 0.508939207, 0)
+	Frame.Size = UDim2.new(0, 215, 0, 59)
+
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(69, 140, 255)), ColorSequenceKeypoint.new(0.34, Color3.fromRGB(35, 28, 255)), ColorSequenceKeypoint.new(0.51, Color3.fromRGB(109, 65, 255)), ColorSequenceKeypoint.new(0.79, Color3.fromRGB(29, 82, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(69, 140, 255))}
+	UIGradient.Parent = Frame
+
+	textlabel.Name = "textlabel"
+	textlabel.Parent = Frame
+	textlabel.Active = true
+	textlabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	textlabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	textlabel.Size = UDim2.new(0, 215, 0, 58)
+	textlabel.Font = Enum.Font.SourceSans
+	textlabel.Text = "0 Dw"
+	textlabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+	textlabel.TextSize = 23.000
+	textlabel.TextWrapped = true
+
+	UICorner.CornerRadius = UDim.new(0, 10)
+	UICorner.Parent = textlabel
+
+	UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(69, 140, 255)), ColorSequenceKeypoint.new(0.34, Color3.fromRGB(35, 28, 255)), ColorSequenceKeypoint.new(0.51, Color3.fromRGB(109, 65, 255)), ColorSequenceKeypoint.new(0.79, Color3.fromRGB(29, 82, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(69, 140, 255))}
+	UIGradient_2.Parent = textlabel
+
+	-- Scripts:
+
+	local function XVYMLY_fake_script() -- ScreenGui.LocalScript 
+		local script = Instance.new('LocalScript', ScreenGui)
+
+		frame = script.Parent.Frame
+		frame.Draggable = true
+		frame.Active = true
+		frame.Selectable = true
+	end
+	coroutine.wrap(XVYMLY_fake_script)()
+
+	repeat
+		wait(.1)
+		local num = 0
+		for i,v in pairs(game:GetService("CoreGui").RobloxGui.Backpack.Inventory.ScrollingFrame.UIGridFrame:GetChildren()) do
+			if v:IsA("TextButton") then
+				num += 1
+			end
+		end
+		textlabel.Text = num.."DW"
+	until num == 9999999999999
+end)
+
+Admin.Name = "Admin"
+Admin.Parent = ScrollingFrame
+Admin.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Admin.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Admin.Position = UDim2.new(0.512903214, 0, 0.289264411, 0)
+Admin.Size = UDim2.new(0, 129, 0, 50)
+Admin.Font = Enum.Font.SourceSans
+Admin.Text = "Admin"
+Admin.TextColor3 = Color3.fromRGB(255, 255, 255)
+Admin.TextSize = 30.000
+Admin.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/pGhYnsxA", true))()
+end)
+
+Rumble.Name = "Rumble"
+Rumble.Parent = ScrollingFrame
+Rumble.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Rumble.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Rumble.Position = UDim2.new(0.0419354886, 0, 0.362823069, 0)
+Rumble.Size = UDim2.new(0, 129, 0, 50)
+Rumble.Font = Enum.Font.SourceSans
+Rumble.Text = "Rumble"
+Rumble.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rumble.TextSize = 30.000
+Rumble.MouseButton1Down:connect(function()
+	game.ReplicatedFirst.TourneyQ:Destroy()
+end)
+
+DisablePopup.Name = "Disable Pop up"
+DisablePopup.Parent = ScrollingFrame
+DisablePopup.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DisablePopup.BorderColor3 = Color3.fromRGB(255, 255, 255)
+DisablePopup.Position = UDim2.new(0.512903214, 0, 0.362823069, 0)
+DisablePopup.Size = UDim2.new(0, 129, 0, 50)
+DisablePopup.Font = Enum.Font.SourceSans
+DisablePopup.Text = "Disable Pop up"
+DisablePopup.TextColor3 = Color3.fromRGB(255, 255, 255)
+DisablePopup.TextSize = 22.000
+DisablePopup.MouseButton1Down:connect(function()
+	game:GetService("Players").LocalPlayer.PlayerGui.HUD.Frame.MuscleGain:Destroy()
+end)
+
+Small.Name = "Small"
+Small.Parent = ScrollingFrame
+Small.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Small.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Small.Position = UDim2.new(0.0419354811, 0, 0.426441342, 0)
+Small.Size = UDim2.new(0, 129, 0, 50)
+Small.Font = Enum.Font.SourceSans
+Small.Text = "Small"
+Small.TextColor3 = Color3.fromRGB(255, 255, 255)
+Small.TextSize = 30.000
+Small.MouseButton1Down:connect(function()
+	for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
+		if v:IsA("NumberValue") then
+			v:Destroy()
+		end
+	end
+end)
+
+Loop.Name = "Loop"
+Loop.Parent = ScrollingFrame
+Loop.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Loop.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Loop.Position = UDim2.new(0.512903273, 0, 0.426441342, 0)
+Loop.Size = UDim2.new(0, 129, 0, 50)
+Loop.Font = Enum.Font.SourceSans
+Loop.Text = "Loop"
+Loop.TextColor3 = Color3.fromRGB(255, 255, 255)
+Loop.TextSize = 30.000
+Loop.MouseButton1Down:connect(function()
+	loadstring(game:GetObjects('rbxassetid://1010374652')[1].Source)() 
+end)
+
+Camera.Name = "Camera"
+Camera.Parent = ScrollingFrame
+Camera.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Camera.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Camera.Position = UDim2.new(0.0419354811, 0, 0.491053671, 0)
+Camera.Size = UDim2.new(0, 129, 0, 50)
+Camera.Font = Enum.Font.SourceSans
+Camera.Text = "Camera"
+Camera.TextColor3 = Color3.fromRGB(255, 255, 255)
+Camera.TextSize = 30.000
+Camera.MouseButton1Down:connect(function()
+	game:GetService("Workspace").Camera:Destroy()
+end)
+
+Inventory.Name = "Inventory"
+Inventory.Parent = ScrollingFrame
+Inventory.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Inventory.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Inventory.Position = UDim2.new(0.512903214, 0, 0.490059614, 0)
+Inventory.Size = UDim2.new(0, 129, 0, 50)
+Inventory.Font = Enum.Font.SourceSans
+Inventory.Text = "Inventory"
+Inventory.TextColor3 = Color3.fromRGB(255, 255, 255)
+Inventory.TextSize = 30.000
+Inventory.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/8W1draqT", true))()
+end)
+
+ClickEtoopen.Name = "Click E to open"
+ClickEtoopen.Parent = ScrollingFrame
+ClickEtoopen.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ClickEtoopen.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ClickEtoopen.Position = UDim2.new(0.022580646, 0, 0.557654023, 0)
+ClickEtoopen.Size = UDim2.new(0, 288, 0, 50)
+ClickEtoopen.Font = Enum.Font.SourceSans
+ClickEtoopen.Text = "Click E to open"
+ClickEtoopen.TextColor3 = Color3.fromRGB(255, 255, 255)
+ClickEtoopen.TextSize = 50.000
+
+ClickXtoclose.Name = "Click X to close"
+ClickXtoclose.Parent = ScrollingFrame
+ClickXtoclose.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ClickXtoclose.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ClickXtoclose.Position = UDim2.new(0, 0, 0.620278299, 0)
+ClickXtoclose.Size = UDim2.new(0, 295, 0, 50)
+ClickXtoclose.Font = Enum.Font.SourceSans
+ClickXtoclose.Text = "Click X to close"
+ClickXtoclose.TextColor3 = Color3.fromRGB(255, 255, 255)
+ClickXtoclose.TextSize = 50.000
+
+DiscordContactFluzas4940.Name = "Discord Contact: Fluzas#4940"
+DiscordContactFluzas4940.Parent = ScrollingFrame
+DiscordContactFluzas4940.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DiscordContactFluzas4940.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DiscordContactFluzas4940.Position = UDim2.new(0.00967742037, 0, 0.669980109, 0)
+DiscordContactFluzas4940.Size = UDim2.new(0, 288, 0, 50)
+DiscordContactFluzas4940.Font = Enum.Font.SourceSans
+DiscordContactFluzas4940.Text = "Discord Contact: Fluzas#4940"
+DiscordContactFluzas4940.TextColor3 = Color3.fromRGB(255, 255, 255)
+DiscordContactFluzas4940.TextSize = 25.000
+
+-- Scripts:
+
+local function VSDA_fake_script() -- ScrollingFrame.LocalScript 
+	local script = Instance.new('LocalScript', ScrollingFrame)
+
+	local Plr = game.Players.LocalPlayer
+	
+	Plr:GetMouse().KeyDown:Connect(function(K)
+		if K == "e" then
+			script.Parent.Visible = true
+		end
+	end)
+	
+	local Plr = game.Players.LocalPlayer
+	
+	Plr:GetMouse().KeyDown:Connect(function(K)
+		if K == "x" then
+			script.Parent.Visible = false
+		end
+	end)
+end
+coroutine.wrap(VSDA_fake_script)()
+local function TLKIMQS_fake_script() -- ScrollingFrame.LocalScript 
+	local script = Instance.new('LocalScript', ScrollingFrame)
+
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(TLKIMQS_fake_script)()
